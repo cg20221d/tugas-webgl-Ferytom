@@ -3,13 +3,40 @@ function main() {
   var gl = kanvas.getContext('webgl');
 
   var vertices = [
-    -0.75, 0.75,
-    -0.5, 1.0,
+    -0.65, 0.75,
     -0.25, 0.75,
-    -0.5, 0.5,
+    -0.25, 0.75,
     -0.25, 0.25,
-    -0.5, 0.0,
-    -0.75, 0.25
+    -0.65, 0.25,
+    -0.25, 0.25,
+    -0.65, 0.5,
+    -0.25, 0.5,
+    0.75, 0.75,
+    0.25, 0.75,
+    0.25, 0.5,
+    0.75, 0.5,
+    0.75, 0.25,
+    0.25, 0.25,
+    -0.75, -0.1,
+    -0.5, -0.1,
+    -0.5, -0.75,
+    -0.75, -0.75,
+    0.0, -0.1,
+    0.1, -0.1,
+    0.1, -0.75,
+    0.0, -0.75,
+    0.45, -0.4,
+    0.1, -0.1,
+    0.1, -0.25,
+    0.4, -0.5,
+    0.35, -0.4,
+    0.65, -0.1,
+    0.65, -0.25,
+    0.4, -0.5,    
+    0.65, -0.1,
+    0.75, -0.1,
+    0.75, -0.75,
+    0.65, -0.75,
   ];
 
   var buffer = gl.createBuffer();
@@ -65,5 +92,18 @@ function main() {
   //            Merah, Hijau, Biru, Transparansi
   gl.clear(gl.COLOR_BUFFER_BIT);
 
-  gl.drawArrays(gl.LINE_STRIP, 0, 7);
+  // make 3
+  gl.drawArrays(gl.LINE_STRIP, 0, 2);
+  gl.drawArrays(gl.LINE_STRIP, 2, 2);
+  gl.drawArrays(gl.LINE_STRIP, 4, 2);
+  gl.drawArrays(gl.LINE_STRIP, 6, 2);
+  //make 5
+  gl.drawArrays(gl.LINE_STRIP, 8, 6);
+  // make i
+  gl.drawArrays(gl.TRIANGLE_FAN, 14, 4);
+  // make M
+  gl.drawArrays(gl.TRIANGLE_FAN, 18, 4);
+  gl.drawArrays(gl.TRIANGLE_FAN, 22, 4);
+  gl.drawArrays(gl.TRIANGLE_FAN, 26, 4);
+  gl.drawArrays(gl.TRIANGLE_FAN, 30, 4);
 }
